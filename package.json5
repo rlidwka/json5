@@ -1,5 +1,7 @@
-// This file is written in JSON5 syntax, naturally, but npm needs a regular
-// JSON file, so compile via `npm run build`. Be sure to keep both in sync!
+// This file is written in JSON5 syntax, npm will automatically compile it
+// to JSON when installing/publishing.
+//
+// You can compile it manually via `npm run build`.
 
 {
     name: 'json5',
@@ -20,6 +22,7 @@
     scripts: {
         build: './lib/cli.js -c package.json5',
         test: 'mocha --ui exports --reporter spec',
+        prepublish: './lib/cli.js -c package.json5',
     },
     homepage: 'http://json5.org/',
     repository: {
